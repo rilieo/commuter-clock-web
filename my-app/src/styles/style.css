@@ -1,0 +1,69 @@
+.box{
+    height: 100vh;
+    background-image: url("../assets/img/blue.jpeg");
+    background-size: 100% 100%;
+}
+
+@font-face{
+    font-family: ptsans;
+    src: url(/public/fonts/PT_Sans/PTSans-Regular.ttf);
+}
+
+@font-face{
+    font-family: nanum;
+    src: url(/public/fonts/Nanum_Pen_Script/NanumPenScript-Regular.ttf);
+}
+
+.cont{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 100vw;
+    padding: 15px;
+}
+
+.company{
+    display: inline-block;
+    padding: 5px;
+}
+
+.login{
+    margin-right: 15px;
+}
+
+.sign-up-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 30px;
+}
+
+.lines{
+    display: flex;
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.vl {
+    border-left: 1px solid black;
+    height: 200px;
+}
+
+.login-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

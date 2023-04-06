@@ -24,8 +24,8 @@ function App() {
           <Router>
             <UserAuthContextProvider>
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/settings" element={
+                <Route path="/commuter-clock-web" element={<Home />} />
+                <Route path="/commuter-clock-web/settings" element={
                 <PrivateRoute>
                   <Settings />
                 </PrivateRoute>
@@ -34,8 +34,8 @@ function App() {
                 <Route path="/update" element={<Update />} />
                 <Route path="/delete" element={<Delete />} />
                 <Route path="/add" element={<Add />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
+                <Route path="/commuter-clock-web/login" element={<Login />} />
+                <Route path="/commuter-clock-web/signup" element={<Signup />} />
               </Routes>
             </UserAuthContextProvider>
           </Router>

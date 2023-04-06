@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 import { Button } from 'react-bootstrap'
 import Add from './Add.js'
 import Delete from './Delete.js'
@@ -21,11 +21,11 @@ function App() {
     <div className="box" style={{fontFamily: "ptsans"}}>
       <div>
         <div>
-          <Router>
+          <HashRouter>
             <UserAuthContextProvider>
               <Routes>
-                <Route path="/commuter-clock-web" element={<Home />} />
-                <Route path="/commuter-clock-web/settings" element={
+                <Route path="/" element={<Home />} />
+                <Route path="/settings" element={
                 <PrivateRoute>
                   <Settings />
                 </PrivateRoute>
@@ -34,11 +34,11 @@ function App() {
                 <Route path="/update" element={<Update />} />
                 <Route path="/delete" element={<Delete />} />
                 <Route path="/add" element={<Add />} />
-                <Route path="/commuter-clock-web/login" element={<Login />} />
-                <Route path="/commuter-clock-web/signup" element={<Signup />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
               </Routes>
             </UserAuthContextProvider>
-          </Router>
+          </HashRouter>
           </div>
         </div>
       </div>

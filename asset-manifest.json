@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/commuterclock.com/static/css/main.ab926bab.css",
-    "main.js": "/commuterclock.com/static/js/main.7cc8957d.js",
-    "static/media/NanumPenScript-Regular.ttf": "/commuterclock.com/static/media/NanumPenScript-Regular.124b3244c7b453983cb5.ttf",
-    "static/media/PTSans-Regular.ttf": "/commuterclock.com/static/media/PTSans-Regular.77e92507394e2309d837.ttf",
-    "index.html": "/commuterclock.com/index.html",
-    "main.ab926bab.css.map": "/commuterclock.com/static/css/main.ab926bab.css.map",
-    "main.7cc8957d.js.map": "/commuterclock.com/static/js/main.7cc8957d.js.map"
+    "main.css": "/rilieo/commuter-clock-web.git/static/css/main.5e570639.css",
+    "main.js": "/rilieo/commuter-clock-web.git/static/js/main.84268db7.js",
+    "static/media/NanumPenScript-Regular.ttf": "/rilieo/commuter-clock-web.git/static/media/NanumPenScript-Regular.124b3244c7b453983cb5.ttf",
+    "static/media/PTSans-Regular.ttf": "/rilieo/commuter-clock-web.git/static/media/PTSans-Regular.77e92507394e2309d837.ttf",
+    "index.html": "/rilieo/commuter-clock-web.git/index.html",
+    "main.5e570639.css.map": "/rilieo/commuter-clock-web.git/static/css/main.5e570639.css.map",
+    "main.84268db7.js.map": "/rilieo/commuter-clock-web.git/static/js/main.84268db7.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab926bab.css",
-    "static/js/main.7cc8957d.js"
+    "static/css/main.5e570639.css",
+    "static/js/main.84268db7.js"
   ]
 }

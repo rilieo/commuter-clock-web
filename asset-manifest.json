@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/commuter-clock-web/static/css/main.bd1597aa.css",
-    "main.js": "/commuter-clock-web/static/js/main.2f8bce1b.js",
-    "static/media/NanumPenScript-Regular.ttf": "/commuter-clock-web/static/media/NanumPenScript-Regular.124b3244c7b453983cb5.ttf",
-    "static/media/PTSans-Regular.ttf": "/commuter-clock-web/static/media/PTSans-Regular.77e92507394e2309d837.ttf",
-    "index.html": "/commuter-clock-web/index.html",
-    "main.bd1597aa.css.map": "/commuter-clock-web/static/css/main.bd1597aa.css.map",
-    "main.2f8bce1b.js.map": "/commuter-clock-web/static/js/main.2f8bce1b.js.map"
+    "main.css": "/commuterclock.com/static/css/main.ab926bab.css",
+    "main.js": "/commuterclock.com/static/js/main.7cc8957d.js",
+    "static/media/NanumPenScript-Regular.ttf": "/commuterclock.com/static/media/NanumPenScript-Regular.124b3244c7b453983cb5.ttf",
+    "static/media/PTSans-Regular.ttf": "/commuterclock.com/static/media/PTSans-Regular.77e92507394e2309d837.ttf",
+    "index.html": "/commuterclock.com/index.html",
+    "main.ab926bab.css.map": "/commuterclock.com/static/css/main.ab926bab.css.map",
+    "main.7cc8957d.js.map": "/commuterclock.com/static/js/main.7cc8957d.js.map"
   },
   "entrypoints": [
-    "static/css/main.bd1597aa.css",
-    "static/js/main.2f8bce1b.js"
+    "static/css/main.ab926bab.css",
+    "static/js/main.7cc8957d.js"
   ]
 }

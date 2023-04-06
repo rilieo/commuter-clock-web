@@ -37,7 +37,7 @@ export default function Login() {
     return (
     <div className="login-container">
         <Form className="login-form" onSubmit={handleSubmit}>
-            <h1>Log In to your Account</h1>
+            <h1 style={{fontWeight: "bold"}}>Log In</h1>
             {error && <Alert variant="danger">{error}</Alert>}
             <br></br>
             <Form.Control

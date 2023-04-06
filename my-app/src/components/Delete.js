@@ -18,7 +18,8 @@ export default function Delete() {
 
     return (
         <>
-            <Card>
+        <div className="delete-container">
+            <Card className="delete-form">
                 <Card.Body>
                 <Form onSubmit={handleSubmit}> 
                     <Form.Group id="user">
@@ -30,6 +31,7 @@ export default function Delete() {
                 </Form>
                 </Card.Body>
             </Card>
+        </div>
         </>
     )
 }

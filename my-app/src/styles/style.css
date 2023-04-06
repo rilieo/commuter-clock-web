@@ -51,6 +51,25 @@
     justify-content: center;
 }
 
+.settings-buttons{
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.add-container,
+.delete-container{
+    display: flex;
+    justify-content: center;
+}
+
+.add-form,
+.delete-form{
+    width: 30vw;
+}
+
 .login-container{
     display: flex;
     width: 100vw;
@@ -74,7 +93,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-right: 30px;
 }
 
 .login-form{

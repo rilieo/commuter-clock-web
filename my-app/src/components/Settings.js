@@ -4,12 +4,6 @@ import '../styles/style.css'
 
 export default function Settings() {
 
-    const style = {
-        display: 'flex', 
-        flexDirection: 'column', 
-        alignItems: 'flex-start'
-    }
-
     const navigate = useNavigate()
 
     function goAdd(e){
@@ -29,14 +23,16 @@ export default function Settings() {
 
     return (
         <>
-        <div className="settings-container" style={style}>
-            <h1>Settings</h1>
-            <Button onClick={goAdd} variant="dark">Add Profile</Button>
-            <br></br>
-            <Button onClick={goUpdate} variant="dark">Update Profile</Button>
-            <br></br>
-            <Button onClick={goDelete} variant="dark">Delete Profile</Button>
-            <br></br>
+        <div className="settings-container">
+            <div className="settings-buttons">
+                <h1>Settings</h1>
+                <Button onClick={goAdd} variant="dark">Add Profile</Button>
+                <br></br>
+                <Button onClick={goUpdate} variant="dark">Update Profile</Button>
+                <br></br>
+                <Button onClick={goDelete} variant="dark">Delete Profile</Button>
+                <br></br>
+            </div>
         </div>
         </>
 

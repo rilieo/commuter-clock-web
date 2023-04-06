@@ -31,19 +31,6 @@
     margin-right: 15px;
 }
 
-.sign-up-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.sign-up-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 30px;
-}
-
 .lines{
     display: flex;
     flex-direction: column;
@@ -52,18 +39,47 @@
 
 .vl {
     border-left: 1px solid black;
-    height: 200px;
+    height: 100px;
+}
+
+.settings-container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .login-container{
     display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up-container{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up-form{
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-right: 30px;
 }
 
 .login-form{
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 30px;
 }

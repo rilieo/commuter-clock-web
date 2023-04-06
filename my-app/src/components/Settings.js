@@ -29,7 +29,7 @@ export default function Settings() {
 
     return (
         <>
-        <div style={style}>
+        <div className="settings-container" style={style}>
             <h1>Settings</h1>
             <Button onClick={goAdd} variant="dark">Add Profile</Button>
             <br></br>

@@ -9,15 +9,9 @@ import Login from './Login.js'
 import Home from './Home.js'
 import { UserAuthContextProvider } from '../context/UserAuthContext.js';
 import '../styles/style.css'
+import PrivateRoute from './PrivateRoute.js';
 
 function App() {
-
-  const showHome = () =>{
-    if (window.location.pathname === '/'){
-      return <Home />
-    }
-  }
-
   return (
     <>
     {/* <video id="background-vid" autoPlay loop muted>
@@ -30,13 +24,18 @@ function App() {
           <Router>
             <UserAuthContextProvider>
               <Routes>
-                <Route exact path="/" element={<Login />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/signup" element={<Signup />} />
-                <Route path="/settings" element={<Settings />} />
+                <Route path="/" element={<Home />} />
+                <Route path="/settings" element={
+                <PrivateRoute>
+                  <Settings />
+                </PrivateRoute>
+              } 
+              />
                 <Route path="/update" element={<Update />} />
                 <Route path="/delete" element={<Delete />} />
-                {/* <Route path="/add" element={<Add />} /> */}
+                <Route path="/add" element={<Add />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/signup" element={<Signup />} />
               </Routes>
             </UserAuthContextProvider>
           </Router>

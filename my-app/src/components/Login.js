@@ -39,6 +39,7 @@ export default function Login() {
         {error && <Alert variant="danger">{error}</Alert>}
         <Form className="login-form" onSubmit={handleSubmit}>
             <h1>Log In to your Account</h1>
+            <br></br>
             <Form.Control
             type="email"
             placeholder="Enter your email"

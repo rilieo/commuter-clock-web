@@ -1,7 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
-  "homepage": "commuterclock.com",
+  "homepage": "https://github.com/rilieo/commuter-clock-web.git",
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.12.4",

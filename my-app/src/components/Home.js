@@ -17,15 +17,20 @@ export default function Home() {
     }
     
     return (
-        <div className="cont">
-        <div>
-            <h2 className="company" style={{fontFamily: "nanum", fontSize: 50}}>Commuter Clock</h2>
-            <h4 className="company" style={{fontFamily: "nanum", fontSize: 25}}>by City Surfers Inc.</h4>
-        </div>
-        <div className="buttons">
-            <Button className="login" variant="dark" onClick={login}>Login</Button>
-            <Button variant="dark" onClick={signup}>Sign Up</Button>
-        </div>
-</div>
+        <>
+            <div className="cont">
+                <div>
+                    <h2 className="company" style={{fontFamily: "nanum", fontSize: 50}}>Commuter Clock</h2>
+                    <h4 className="company" style={{fontFamily: "nanum", fontSize: 25}}>by City Surfers Inc.</h4>
+                </div>
+                <div className="buttons">
+                    <Button className="login" variant="dark" onClick={login}>Login</Button>
+                    <Button variant="dark" onClick={signup}>Sign Up</Button>
+                </div>
+            </div>
+            <video id="background-vid" autoPlay loop muted>
+                
+            </video>
+        </>
     )
 }

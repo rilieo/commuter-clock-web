@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import app from '../firebase.js';
 import { Form, Button, Card } from 'react-bootstrap'
 import { setDoc, doc, getFirestore } from 'firebase/firestore/lite';
@@ -12,7 +12,7 @@ export default function Settings() {
     const startTimeRef = useRef()
     const endTimeRef = useRef()
     const waitTimeRef = useRef()
-    const carRef = useRef()
+    const [wantCar, setWantCar] = useState(false)
 
     function handleSubmit(e) {
 
@@ -24,7 +24,7 @@ export default function Settings() {
             origin: startPtRef.current.value,
             start_hour: startTimeRef.current.value,
             wait_seconds: waitTimeRef.current.value,
-            should_consider_car: carRef.current.checked
+            should_consider_car: wantCar
         });
             alert('User added');
 
@@ -66,7 +66,7 @@ export default function Settings() {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Car</Form.Label>
-                                <Form.Check type="switch"></Form.Check>
+                                <Form.Check type="switch" onChange={(e) => setWantCar(e.target.value)}></Form.Check>
                             </Form.Group>
                             <br></br>
                             <Button className="w-100" type="submit" border="dark" variant="dark">Submit</Button>

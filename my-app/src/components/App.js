@@ -14,11 +14,7 @@ import PrivateRoute from './PrivateRoute.js';
 function App() {
   return (
     <>
-    {/* <video id="background-vid" autoPlay loop muted>
-      <source src="https://www.vecteezy.com/video/1626819-blurry-light-traffic-jam-at-night" type="video/mov"/>
-    </video> */}
     <div className="box" style={{fontFamily: "ptsans"}}>
-      <div>
         <div>
           <HashRouter>
             <UserAuthContextProvider>
@@ -39,7 +35,6 @@ function App() {
             </UserAuthContextProvider>
           </HashRouter>
           </div>
-        </div>
       </div>
     </>
   );

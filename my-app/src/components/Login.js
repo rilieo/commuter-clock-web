@@ -20,7 +20,7 @@ export default function Login() {
             await logIn(email, password)
             navigate("/settings")
         } catch (err){
-            setError(err.message)
+            setError("User not found")
         }
     }
 
@@ -30,15 +30,15 @@ export default function Login() {
             await googleSignIn()
             navigate("/settings")
         } catch (error){
-            console.log(error.message)
+            console.log("User not found")
         }
     }
 
     return (
     <div className="login-container">
-        {error && <Alert variant="danger">{error}</Alert>}
         <Form className="login-form" onSubmit={handleSubmit}>
             <h1>Log In to your Account</h1>
+            {error && <Alert variant="danger">{error}</Alert>}
             <br></br>
             <Form.Control
             type="email"

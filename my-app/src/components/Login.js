@@ -58,7 +58,11 @@ export default function Login() {
         </Form>
         <div className="lines">
                 <div className="vl"></div>
-                OR
+                <br></br>
+                <div>
+                    OR
+                </div>
+                <br></br>
                 <div className="vl"></div>
         </div>
         <GoogleButton onClick={handleGoogleSignIn}></GoogleButton>

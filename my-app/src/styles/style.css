@@ -1,6 +1,6 @@
 .box{
-    height: 100vh;
-    background-image: url("../assets/img/blue.jpeg");
+    width: 100%;
+    background-image: url('../assets/img/blue.jpeg');
     background-size: 100% 100%;
 }
 
@@ -14,17 +14,38 @@
     src: url(/public/fonts/Nanum_Pen_Script/NanumPenScript-Regular.ttf);
 }
 
-.cont{
+.cont{  
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.header{
     display: flex;
     justify-content: space-between;
-    position: absolute;
     width: 100vw;
     padding: 15px;
+}
+
+.video{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .company{
     display: inline-block;
     padding: 5px;
+}
+
+.about{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
 }
 
 .login{
@@ -72,15 +93,7 @@
     width: 30vw;
 }
 
-.login-container{
-    display: flex;
-    width: 100vw;
-    height: 100vh;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
+.login-container,
 .sign-up-container{
     display: flex;
     width: 100vw;

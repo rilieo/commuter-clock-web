@@ -9,33 +9,45 @@ export default function Update() {
 
     const auth = getAuth();
     const user = auth.currentUser;
-    const [ startPt, setStartPt ] = useState("")
-    const [ dest, setDest ] = useState("")
-    const [ waitTime, setWaitTime ] = useState("")
+    // const [ startPt, setStartPt ] = useState("")
+    // const [ dest, setDest ] = useState("")
+    // const [ waitTime, setWaitTime ] = useState("")
+    const startPtRef = useRef()
+    const destRef = useRef()
+    const waitTimeRef = useRef()
     const startTimeRef = useRef()
     const endTimeRef = useRef()
-    const [ wantCar, setWantCar ] = useState(true)
+    const [ wantCar, setWantCar ] = useState(false)
 
-    getDoc(doc(getFirestore(app), "settings", user.email)).then(docSnap => {
-            let arr = Object.values(docSnap.data())
-            console.log(arr)
-            setStartPt(arr[0])
-            setDest(arr[4])
-            setWaitTime(arr[5])
-            setWantCar(arr[3])
-            console.log(wantCar)
-    })
+    // getDoc(doc(getFirestore(app), "settings", user.email)).then(docSnap => {
+    //         let arr = Object.values(docSnap.data())
+    //         console.log(arr)
+    //         setStartPt(arr[0])
+    //         setDest(arr[4])
+    //         setWaitTime(arr[5])
+    //         setWantCar(arr[3])
+    //         console.log(wantCar)
+    // })
 
     function handleSubmit(e){
 
         e.preventDefault()
 
+        // updateDoc(doc(getFirestore(app), "settings", user.email), {
+        //     destination: dest,
+        //     end_hour: endTimeRef.current.value,
+        //     origin: startPt,
+        //     start_hour: startTimeRef.current.value,
+        //     wait_seconds: waitTime,
+        //     should_consider_car: wantCar
+        // });
+
         updateDoc(doc(getFirestore(app), "settings", user.email), {
-            destination: dest,
+            destination: destRef.current.value,
             end_hour: endTimeRef.current.value,
-            origin: startPt,
+            origin: startPtRef.current.value,
             start_hour: startTimeRef.current.value,
-            wait_seconds: waitTime,
+            wait_seconds: waitTimeRef.current.value,
             should_consider_car: wantCar
         });
         
@@ -52,11 +64,11 @@ export default function Update() {
                         <Form id="form" onSubmit={handleSubmit}> 
                             <Form.Group id="start">
                                 <Form.Label>Starting Point</Form.Label>
-                                <Form.Control type="text" value={startPt} onChange={(e) => setStartPt(e.target.value)} required></Form.Control>
+                                <Form.Control type="text" ref={startPtRef} required></Form.Control>
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Destination</Form.Label>
-                                <Form.Control id="end" type="text" value={dest} onChange={(e) => setDest(e.target.value)} required></Form.Control>
+                                <Form.Control id="end" type="text" ref={destRef} required></Form.Control>
                             </Form.Group>
                             <Form.Group >
                                 <Form.Label>Start Time</Form.Label>
@@ -68,7 +80,7 @@ export default function Update() {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Wait Time</Form.Label>
-                                <Form.Control id="wait_time" type="number" value={waitTime} onChange={(e) => setWaitTime(e.target.value)} required></Form.Control>
+                                <Form.Control id="wait_time" type="number" ref={waitTimeRef} required></Form.Control>
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Car</Form.Label>

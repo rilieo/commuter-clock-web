@@ -9,30 +9,33 @@ export default function Update() {
 
     const auth = getAuth();
     const user = auth.currentUser;
-    // getDoc(doc(getFirestore(app), "settings", user.email)).then(docSnap => {
-    //         var arr = Object.values(docSnap.data())
-    //         var data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]]
-    //         console.log(data)
-    // })
-
-    // const [ startPt, setStartPt ] = useState(data[0])
-    const startPtRef = useRef()
-    const destRef = useRef()
+    const [ startPt, setStartPt ] = useState("")
+    const [ dest, setDest ] = useState("")
+    const [ waitTime, setWaitTime ] = useState("")
     const startTimeRef = useRef()
     const endTimeRef = useRef()
-    const waitTimeRef = useRef()
-    const [ wantCar, setWantCar ] = useState(false)
+    const [ wantCar, setWantCar ] = useState(true)
+
+    getDoc(doc(getFirestore(app), "settings", user.email)).then(docSnap => {
+            let arr = Object.values(docSnap.data())
+            console.log(arr)
+            setStartPt(arr[0])
+            setDest(arr[4])
+            setWaitTime(arr[5])
+            setWantCar(arr[3])
+            console.log(wantCar)
+    })
 
     function handleSubmit(e){
 
         e.preventDefault()
 
         updateDoc(doc(getFirestore(app), "settings", user.email), {
-            destination: destRef.current.value,
+            destination: dest,
             end_hour: endTimeRef.current.value,
-            origin: startPtRef.current.value,
+            origin: startPt,
             start_hour: startTimeRef.current.value,
-            wait_seconds: waitTimeRef.current.value,
+            wait_seconds: waitTime,
             should_consider_car: wantCar
         });
         
@@ -49,11 +52,11 @@ export default function Update() {
                         <Form id="form" onSubmit={handleSubmit}> 
                             <Form.Group id="start">
                                 <Form.Label>Starting Point</Form.Label>
-                                <Form.Control type="text" ref={startPtRef} required></Form.Control>
+                                <Form.Control type="text" value={startPt} onChange={(e) => setStartPt(e.target.value)} required></Form.Control>
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Destination</Form.Label>
-                                <Form.Control id="end" type="text" ref={destRef} required></Form.Control>
+                                <Form.Control id="end" type="text" value={dest} onChange={(e) => setDest(e.target.value)} required></Form.Control>
                             </Form.Group>
                             <Form.Group >
                                 <Form.Label>Start Time</Form.Label>
@@ -65,7 +68,7 @@ export default function Update() {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Wait Time</Form.Label>
-                                <Form.Control id="wait_time" type="number" ref={waitTimeRef} required></Form.Control>
+                                <Form.Control id="wait_time" type="number" value={waitTime} onChange={(e) => setWaitTime(e.target.value)} required></Form.Control>
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Car</Form.Label>

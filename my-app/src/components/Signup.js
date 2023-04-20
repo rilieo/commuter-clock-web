@@ -54,9 +54,9 @@ export default function Signup() {
         <>
         
         <div className="sign-up-container">
+        <h1 style={{fontWeight: "bold"}}>Create Account</h1>
         {error && <Alert variant="danger">{error}</Alert>}
             <Form className="sign-up-form" onSubmit={handleSubmit}>
-                <h1 style={{fontWeight: "bold"}}>Create Account</h1>
                 <Form.Control
                 type="email"
                 placeholder="Enter your email"

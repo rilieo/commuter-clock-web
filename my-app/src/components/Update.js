@@ -2,23 +2,32 @@ import React from 'react'
 import { Card, Form, Button } from 'react-bootstrap'
 import { useRef, useState  } from 'react'
 import { updateDoc, getFirestore, getDoc, doc } from 'firebase/firestore/lite'
+import { getAuth } from 'firebase/auth'
 import app from '../firebase.js'
 
-export default function Edit() {
+export default function Update() {
 
-    const userRef = useRef()
+    const auth = getAuth();
+    const user = auth.currentUser;
+    // getDoc(doc(getFirestore(app), "settings", user.email)).then(docSnap => {
+    //         var arr = Object.values(docSnap.data())
+    //         var data = [arr[0], arr[1], arr[2], arr[3], arr[4], arr[5]]
+    //         console.log(data)
+    // })
+
+    // const [ startPt, setStartPt ] = useState(data[0])
     const startPtRef = useRef()
     const destRef = useRef()
     const startTimeRef = useRef()
     const endTimeRef = useRef()
     const waitTimeRef = useRef()
-    const [wantCar, setWantCar] = useState(false)
+    const [ wantCar, setWantCar ] = useState(false)
 
     function handleSubmit(e){
 
         e.preventDefault()
 
-        updateDoc((getFirestore(app), "users", userRef.current.value), {
+        updateDoc(doc(getFirestore(app), "settings", user.email), {
             destination: destRef.current.value,
             end_hour: endTimeRef.current.value,
             origin: startPtRef.current.value,
@@ -38,10 +47,6 @@ export default function Edit() {
             <Card className="update-form" border="dark">
                 <Card.Body>
                         <Form id="form" onSubmit={handleSubmit}> 
-                            <Form.Group id="user">
-                                <Form.Label>Username</Form.Label>
-                                <Form.Control type="text" ref={userRef}></Form.Control>
-                            </Form.Group>
                             <Form.Group id="start">
                                 <Form.Label>Starting Point</Form.Label>
                                 <Form.Control type="text" ref={startPtRef} required></Form.Control>
@@ -64,7 +69,7 @@ export default function Edit() {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Car</Form.Label>
-                                <Form.Check type="switch" onChange={(e) => setWantCar(e.target.value)}></Form.Check>
+                                <Form.Check type="switch" onChange={(e) => setWantCar(e.target.checked)}></Form.Check>
                             </Form.Group>
                             <br></br>
                             <Button className="w-100" type="submit" border="dark" variant="dark">Update</Button>

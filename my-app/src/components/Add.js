@@ -15,8 +15,7 @@ export default function Add() {
     const startTimeRef = useRef()
     const endTimeRef = useRef()
     const waitTimeRef = useRef()
-    const wantCarRef = useRef()
-    console.log(wantCarRef)
+    const [wantCar, setWantCar] = useState(false)
 
     function handleSubmit(e) {
 
@@ -28,9 +27,9 @@ export default function Add() {
             origin: startPtRef.current.value,
             start_hour: startTimeRef.current.value,
             wait_seconds: waitTimeRef.current.value,
-            should_consider_car: wantCarRef.current.value
-        });
-            alert('User added');
+            should_consider_car: wantCar
+        })
+            alert('User added')
 
         e.target.reset()
         
@@ -65,7 +64,7 @@ export default function Add() {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Car</Form.Label><br></br>
-                                <Form.Check type="checkbox" onChange={handleSubmit} ref={wantCarRef}></Form.Check>
+                                <Form.Check type="switch" onChange={(e) => setWantCar(e.target.checked)}></Form.Check>
                             </Form.Group>
                             <br></br>
                             <Button className="w-100" type="submit" border="dark" variant="dark">Add</Button>

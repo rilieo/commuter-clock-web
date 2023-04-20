@@ -1,6 +1,5 @@
-import React, { useRef } from 'react'
 import app from '../firebase.js'
-import { Form, Button, Card } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { getFirestore, doc, deleteDoc } from 'firebase/firestore/lite';
 import { getAuth } from 'firebase/auth'
 
@@ -10,15 +9,12 @@ export default function Delete() {
     const user = auth.currentUser;
     const email = user.email
 
-    const userRef = useRef()
-
     function handleSubmit(e){
         e.preventDefault()
 
         deleteDoc(doc(getFirestore(app), "settings", email));
 
-        e.target.reset()
-
+        alert('User deleted');
     }
 
     return (
@@ -27,7 +23,7 @@ export default function Delete() {
             <div style={{maxWidth: '550px'}}>
                 <h2>Are you sure you want to delete?</h2>
                 <br></br>
-                <Button className="w-100" type="submit" variant="dark">Delete</Button>
+                <Button onClick={handleSubmit} className="w-100" type="submit" variant="dark">Delete</Button>
             </div>
         </div>
         </>

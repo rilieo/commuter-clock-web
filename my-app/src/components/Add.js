@@ -16,6 +16,7 @@ export default function Add() {
     const endTimeRef = useRef()
     const waitTimeRef = useRef()
     const wantCarRef = useRef()
+    console.log(wantCarRef)
 
     function handleSubmit(e) {
 
@@ -37,7 +38,6 @@ export default function Add() {
     
     return (
     <>
-        <br></br>
         <div className="add-container">
             <h1>Settings</h1>
             <Card className="add-form" border="dark">
@@ -64,11 +64,11 @@ export default function Add() {
                                 <Form.Control id="wait_time" type="number" ref={waitTimeRef}required></Form.Control>
                             </Form.Group>
                             <Form.Group>
-                                <Form.Label>Car</Form.Label>
-                                <Form.Check type="checkbox" ref={wantCarRef}></Form.Check>
+                                <Form.Label>Car</Form.Label><br></br>
+                                <Form.Check type="checkbox" onChange={handleSubmit} ref={wantCarRef}></Form.Check>
                             </Form.Group>
                             <br></br>
-                            <Button className="w-100" type="submit" border="dark" variant="dark">Submit</Button>
+                            <Button className="w-100" type="submit" border="dark" variant="dark">Add</Button>
                         </Form>
                 </Card.Body>
             </Card>

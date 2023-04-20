@@ -10,6 +10,7 @@ import Home from './Home.js'
 import { UserAuthContextProvider } from '../context/UserAuthContext.js';
 import '../styles/style.css'
 import PrivateRoute from './PrivateRoute.js';
+import About from './About.js'
 
 function App() {
   return (
@@ -25,11 +26,12 @@ function App() {
                 </PrivateRoute>
               } 
               />
-                <Route path="/update" element={<Update />} />
-                <Route path="/delete" element={<Delete />} />
                 <Route path="/add" element={<Add />} />
+                <Route path="/delete" element={<Delete />} />
+                <Route path="/update" element={<Update />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/about" element={<About />} />
               </Routes>
             </UserAuthContextProvider>
           </HashRouter>

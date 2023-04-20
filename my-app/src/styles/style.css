@@ -1,8 +1,8 @@
-
 .box{
-    width: 100%;
     background-image: url('../assets/img/blue.jpeg');
     background-size: 100% 100%;
+    heigth: 100vh;
+    width: 100vw;
 }
 
 @font-face{
@@ -66,6 +66,9 @@
     height: 100px;
 }
 
+.add-container,
+.delete-container,
+.update-container,
 .settings-container{
     display: flex;
     width: 100vw;
@@ -83,15 +86,11 @@
     justify-content: flex-start;
 }
 
-.add-container,
-.delete-container{
-    display: flex;
-    justify-content: center;
-}
-
 .add-form,
+.update-form,
 .delete-form{
     width: 30vw;
+    height: 70vw;
 }
 
 .login-container,

@@ -13,7 +13,6 @@ import PrivateRoute from './PrivateRoute.js';
 
 function App() {
   return (
-    <>
     <div className="box" style={{fontFamily: "ptsans"}}>
         <div>
           <HashRouter>
@@ -36,7 +35,6 @@ function App() {
           </HashRouter>
           </div>
       </div>
-    </>
   );
 }
 

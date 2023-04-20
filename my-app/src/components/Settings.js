@@ -26,11 +26,11 @@ export default function Settings() {
         <div className="settings-container">
             <div className="settings-buttons">
                 <h1>Settings</h1>
-                <Button onClick={goAdd} variant="dark">Add Profile</Button>
+                <Button onClick={goAdd} variant="dark">Add Settings</Button>
                 <br></br>
-                <Button onClick={goUpdate} variant="dark">Update Profile</Button>
+                <Button onClick={goUpdate} variant="dark">Update Settings</Button>
                 <br></br>
-                <Button onClick={goDelete} variant="dark">Delete Profile</Button>
+                <Button onClick={goDelete} variant="dark">Delete Settings</Button>
                 <br></br>
             </div>
         </div>

@@ -2,29 +2,32 @@ import React, { useRef, useState } from 'react'
 import app from '../firebase.js';
 import { Form, Button, Card } from 'react-bootstrap'
 import { setDoc, doc, getFirestore } from 'firebase/firestore/lite';
+import { getAuth } from "firebase/auth";
 import '../styles/style.css'
 
-export default function Settings() {
+export default function Add() {
 
-    const userRef = useRef()
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const email = user.email
     const startPtRef = useRef()
     const destRef = useRef()
     const startTimeRef = useRef()
     const endTimeRef = useRef()
     const waitTimeRef = useRef()
-    const [wantCar, setWantCar] = useState(false)
+    const wantCarRef = useRef()
 
     function handleSubmit(e) {
 
         e.preventDefault()
 
-        setDoc(doc(getFirestore(app), "settings", userRef.current.value), {
+        setDoc(doc(getFirestore(app), "settings", email), {
             destination: destRef.current.value,
             end_hour: endTimeRef.current.value,
             origin: startPtRef.current.value,
             start_hour: startTimeRef.current.value,
             wait_seconds: waitTimeRef.current.value,
-            should_consider_car: wantCar
+            should_consider_car: wantCarRef.current.value
         });
             alert('User added');
 
@@ -35,15 +38,11 @@ export default function Settings() {
     return (
     <>
         <br></br>
-        <h1 className="text-center mb-4" id="header">Settings</h1>
         <div className="add-container">
+            <h1>Settings</h1>
             <Card className="add-form" border="dark">
                 <Card.Body>
                         <Form id="form" onSubmit={handleSubmit}> 
-                            <Form.Group id="user">
-                                <Form.Label>Username</Form.Label>
-                                <Form.Control type="text" ref={userRef} required></Form.Control>
-                            </Form.Group>
                             <Form.Group id="start">
                                 <Form.Label>Starting Point</Form.Label>
                                 <Form.Control type="text" ref={startPtRef} required></Form.Control>
@@ -66,7 +65,7 @@ export default function Settings() {
                             </Form.Group>
                             <Form.Group>
                                 <Form.Label>Car</Form.Label>
-                                <Form.Check type="switch" onChange={(e) => setWantCar(e.target.value)}></Form.Check>
+                                <Form.Check type="checkbox" ref={wantCarRef}></Form.Check>
                             </Form.Group>
                             <br></br>
                             <Button className="w-100" type="submit" border="dark" variant="dark">Submit</Button>
@@ -74,7 +73,6 @@ export default function Settings() {
                 </Card.Body>
             </Card>
         </div>
-
     </>
     
     )

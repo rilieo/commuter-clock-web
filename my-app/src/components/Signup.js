@@ -6,7 +6,7 @@ import { Form, Button, Alert } from 'react-bootstrap'
 import { useUserAuth } from "../context/UserAuthContext.js";
 import '../styles/style.css'
 
-export default function Login() {
+export default function Signup() {
 
     // const provider = new GoogleAuthProvider();
     const navigate = useNavigate();

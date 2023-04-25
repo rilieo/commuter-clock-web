@@ -38,7 +38,7 @@ export default function Add() {
     return (
     <>
         <div className="add-container">
-            <h1>Settings</h1>
+            <h1>Add</h1>
             <Card className="add-form" border="dark">
                 <Card.Body>
                         <Form id="form" onSubmit={handleSubmit}> 

@@ -1,5 +1,7 @@
 html{
     scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
 }
 
 .box{
@@ -21,36 +23,39 @@ html{
 .cont{  
     display: flex;
     flex-direction: column;
+    heigth: 100vh;
     width: 100vw;
-    height: 100vh;
 }
 
-.header{
+.header,
+.headshots{
     display: flex;
     flex-direction: row;
 }
 
-.left{
+.left,
+.Riley{
     flex: 1;          /* shorthand for: flex-grow: 1, flex-shrink: 1, flex-basis: 0 */
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    margin-left: 10px;
+    margin: 0 auto;
 }
 
-.center{
+.center,
+.Max{
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.right{
+.right,
+.Faith{
     flex: 1;
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    margin-right: 10px;
 }
 
 .video{
@@ -62,7 +67,8 @@ html{
 
 .company{
     display: inline-block;
-    padding: 5px;
+    padding: 10px;
+    width: 30vw;
 }
 
 .mission-container{

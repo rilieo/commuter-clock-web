@@ -1,8 +1,7 @@
 import React from 'react'
-import { Button, Dropdown } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import { useNavigate, Link } from 'react-router-dom'
 import vid from '../assets/video/train.mov'
-import About from './About.js'
 
 export default function Home() {
 
@@ -23,8 +22,7 @@ export default function Home() {
             <div className="cont">
                 <div className="header">
                     <div className="left">
-                        <h2 className="company" style={{fontFamily: "nanum", fontSize: 50}}>Commuter Clock</h2>
-                        <h4 className="company" style={{fontFamily: "nanum", fontSize: 25}}>by City Surfers Inc.</h4>
+                        <h1 className="company" style={{fontFamily: "nanum", fontSize: "50px"}}>Commuter Clock</h1>
                     </div>
                     <div className="center">
                         <Link to="/about" style={{color: "black", fontWeight: "bold", fontSize: "25px"}}>About Us</Link>
@@ -56,7 +54,6 @@ export default function Home() {
                 <br></br>
                 <br></br>
                 <div>
-
                 </div>
             </div>
         </>

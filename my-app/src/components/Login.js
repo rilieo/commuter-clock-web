@@ -3,14 +3,14 @@ import { GoogleButton } from 'react-google-button';
 import { Form, Button, Alert } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../context/UserAuthContext.js';
-import { GoogleAuthProvider, getAuth, signInWithRedirect, getRedirectResult } from "firebase/auth";
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 
 export default function Login() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const { logIn, googleSignIn } = useUserAuth();
+    const { logIn } = useUserAuth();
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
@@ -21,16 +21,6 @@ export default function Login() {
             navigate("/settings");
         } catch (err){
             setError("User not found");
-        }
-    }
-
-    const handleGoogleSignIn = async (e) => {
-        e.preventDefault();
-        try{
-            await googleSignIn();
-            navigate("/settings");
-        } catch (error){
-            console.log("User not found");
         }
     }
 
@@ -54,9 +44,9 @@ export default function Login() {
             onChange={(e) => setPassword(e.target.value)}
             ></Form.Control>
             <br></br>
-            <Button variant="primary" type="submit">Log In</Button>
+            <Button variant="dark" type="submit">Log In</Button>
         </Form>
-        <div className="lines">
+        {/* <div className="lines">
                 <div className="vl"></div>
                 <br></br>
                 <div>
@@ -65,7 +55,7 @@ export default function Login() {
                 <br></br>
                 <div className="vl"></div>
         </div>
-        <GoogleButton onClick={handleGoogleSignIn}></GoogleButton>
+        <GoogleButton onClick={handleClick}></GoogleButton> */}
     </div>
     )
 }

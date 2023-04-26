@@ -55,6 +55,7 @@ export default function Signup() {
         <div className="sign-up-container">
         <h1 style={{fontWeight: "bold"}}>Create Account</h1>
         {error && <Alert variant="danger">{error}</Alert>}
+        <br></br>
             <Form className="sign-up-form" onSubmit={handleSubmit}>
                 <Form.Control
                 type="email"
@@ -70,7 +71,7 @@ export default function Signup() {
                 onChange={(e) => setPassword(e.target.value)}
                 ></Form.Control>
                 <br></br>
-                <Button variant="primary" type="submit">Sign Up</Button>
+                <Button variant="dark" type="submit">Sign Up</Button>
             </Form>
         </div>
         </>

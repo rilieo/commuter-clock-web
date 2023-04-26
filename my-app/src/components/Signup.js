@@ -1,10 +1,9 @@
-import React from 'react'
-import { GoogleButton } from 'react-google-button'
-import { useState } from 'react'
+import React, { useState } from 'react';
+import { GoogleButton } from 'react-google-button';
 import { useNavigate } from 'react-router-dom';
-import { Form, Button, Alert } from 'react-bootstrap'
+import { Form, Button, Alert } from 'react-bootstrap';
 import { useUserAuth } from "../context/UserAuthContext.js";
-import '../styles/style.css'
+import '../styles/style.css';
 
 export default function Signup() {
 
@@ -17,7 +16,7 @@ export default function Signup() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError("")
+        setError("");
         try{
             await signUp(email, password);
             navigate("/settings");

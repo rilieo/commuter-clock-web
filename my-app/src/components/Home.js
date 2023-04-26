@@ -1,20 +1,20 @@
-import React from 'react'
-import { Button } from 'react-bootstrap'
-import { useNavigate, Link } from 'react-router-dom'
-import vid from '../assets/video/train.mov'
+import React from 'react';
+import { Button } from 'react-bootstrap';
+import { useNavigate, Link } from 'react-router-dom';
+import vid from '../assets/video/train.mov';
 
 export default function Home() {
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     function login(e){
-        e.preventDefault()
-        navigate("/login")
+        e.preventDefault();
+        navigate("/login");
     }
 
     function signup(e){
-        e.preventDefault()
-        navigate("/signup")
+        e.preventDefault();
+        navigate("/signup");
     }
     
     return (

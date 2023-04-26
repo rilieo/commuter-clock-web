@@ -1,16 +1,16 @@
-import app from '../firebase.js'
-import { Button } from 'react-bootstrap'
+import app from '../firebase.js';
+import { Button } from 'react-bootstrap';
 import { getFirestore, doc, deleteDoc } from 'firebase/firestore/lite';
-import { getAuth } from 'firebase/auth'
+import { getAuth } from 'firebase/auth';
 
 export default function Delete() {
 
     const auth = getAuth();
     const user = auth.currentUser;
-    const email = user.email
+    const email = user.email;
 
     function handleSubmit(e){
-        e.preventDefault()
+        e.preventDefault();
 
         deleteDoc(doc(getFirestore(app), "settings", email));
 

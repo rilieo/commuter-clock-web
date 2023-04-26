@@ -1,25 +1,25 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState } from 'react';
 import app from '../firebase.js';
-import { Form, Button, Card } from 'react-bootstrap'
+import { Form, Button, Card } from 'react-bootstrap';
 import { setDoc, doc, getFirestore } from 'firebase/firestore/lite';
 import { getAuth } from "firebase/auth";
-import '../styles/style.css'
+import '../styles/style.css';
 
 export default function Add() {
 
     const auth = getAuth();
     const user = auth.currentUser;
-    const email = user.email
-    const startPtRef = useRef()
-    const destRef = useRef()
-    const startTimeRef = useRef()
-    const endTimeRef = useRef()
-    const waitTimeRef = useRef()
-    const [wantCar, setWantCar] = useState(false)
+    const email = user.email;
+    const startPtRef = useRef();
+    const destRef = useRef();
+    const startTimeRef = useRef();
+    const endTimeRef = useRef();
+    const waitTimeRef = useRef();
+    const [wantCar, setWantCar] = useState(false);
 
     function handleSubmit(e) {
 
-        e.preventDefault()
+        e.preventDefault();
 
         setDoc(doc(getFirestore(app), "settings", email), {
             destination: destRef.current.value,
@@ -29,9 +29,9 @@ export default function Add() {
             wait_seconds: waitTimeRef.current.value,
             should_consider_car: wantCar
         })
-            alert('User added')
+            alert('User added');
 
-        e.target.reset()
+        e.target.reset();
         
     }
     

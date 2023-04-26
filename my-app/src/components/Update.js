@@ -1,37 +1,36 @@
-import React from 'react'
-import { Card, Form, Button } from 'react-bootstrap'
-import { useRef, useState  } from 'react'
-import { updateDoc, getFirestore, getDoc, doc } from 'firebase/firestore/lite'
-import { getAuth } from 'firebase/auth'
-import app from '../firebase.js'
+import React, { useRef, useState } from 'react';
+import { Card, Form, Button } from 'react-bootstrap';
+import { updateDoc, getFirestore, getDoc, doc } from 'firebase/firestore/lite';
+import { getAuth } from 'firebase/auth';
+import app from '../firebase.js';
 
 export default function Update() {
 
     const auth = getAuth();
     const user = auth.currentUser;
-    // const [ startPt, setStartPt ] = useState("")
-    // const [ dest, setDest ] = useState("")
-    // const [ waitTime, setWaitTime ] = useState("")
-    const startPtRef = useRef()
-    const destRef = useRef()
-    const waitTimeRef = useRef()
-    const startTimeRef = useRef()
-    const endTimeRef = useRef()
-    const [ wantCar, setWantCar ] = useState(false)
+    // const [ startPt, setStartPt ] = useState("");
+    // const [ dest, setDest ] = useState("");
+    // const [ waitTime, setWaitTime ] = useState("");
+    const startPtRef = useRef();
+    const destRef = useRef();
+    const waitTimeRef = useRef();
+    const startTimeRef = useRef();
+    const endTimeRef = useRef();
+    const [ wantCar, setWantCar ] = useState(false);
 
     // getDoc(doc(getFirestore(app), "settings", user.email)).then(docSnap => {
-    //         let arr = Object.values(docSnap.data())
-    //         console.log(arr)
-    //         setStartPt(arr[0])
-    //         setDest(arr[4])
-    //         setWaitTime(arr[5])
-    //         setWantCar(arr[3])
-    //         console.log(wantCar)
+    //         let arr = Object.values(docSnap.data());
+    //         console.log(arr);
+    //         setStartPt(arr[0]);
+    //         setDest(arr[4]);
+    //         setWaitTime(arr[5]);
+    //         setWantCar(arr[3]);
+    //         console.log(wantCar);
     // })
 
     function handleSubmit(e){
 
-        e.preventDefault()
+        e.preventDefault();
 
         // updateDoc(doc(getFirestore(app), "settings", user.email), {
         //     destination: dest,

@@ -72,9 +72,6 @@ export default function Signup() {
                 <br></br>
                 <Button variant="primary" type="submit">Sign Up</Button>
             </Form>
-            {/* <div>
-                <GoogleButton onClick={handleClick} />
-            </div> */}
         </div>
         </>
     )

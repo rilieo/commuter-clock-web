@@ -17,6 +17,10 @@ export default function About() {
         <h2 style={{marginLeft: "10px"}}>
             Meet the team
         </h2>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         <div class="container">
             <div className="left">
                 <div class="profile">
@@ -55,6 +59,10 @@ export default function About() {
                 </div>
             </div>
         </div>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
         </>
     )
 }

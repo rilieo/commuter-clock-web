@@ -57,7 +57,7 @@ export default function Update() {
     return (
         <>
         <div className="update-container">
-            <h1 className="text-center mb-4" id="header">Update</h1>
+            <h1 className="text-center mb-4" id="header">Update Settings</h1>
             <Card className="update-form" border="dark">
                 <Card.Body>
                         <Form id="form" onSubmit={handleSubmit}> 
@@ -65,22 +65,27 @@ export default function Update() {
                                 <Form.Label>Starting Point</Form.Label>
                                 <Form.Control type="text" ref={startPtRef} required></Form.Control>
                             </Form.Group>
+                            <br></br>
                             <Form.Group>
                                 <Form.Label>Destination</Form.Label>
                                 <Form.Control id="end" type="text" ref={destRef} required></Form.Control>
                             </Form.Group>
+                            <br></br>
                             <Form.Group >
-                                <Form.Label>Start Time</Form.Label>
+                                <Form.Label>Clock Start Time</Form.Label>
                                 <Form.Control id="start_time" type="time" ref={startTimeRef} required></Form.Control>
                             </Form.Group>
+                            <br></br>
                             <Form.Group>
-                                <Form.Label>End Time</Form.Label>
+                                <Form.Label>Clock End Time</Form.Label>
                                 <Form.Control id="end_time" type="time" ref={endTimeRef} required></Form.Control>
                             </Form.Group>
+                            <br></br>
                             <Form.Group>
-                                <Form.Label>Wait Time</Form.Label>
-                                <Form.Control id="wait_time" type="number" ref={waitTimeRef} required></Form.Control>
+                                <Form.Label>Clock Update Delay (seconds) </Form.Label>
+                                <Form.Control id="wait_time" type="number" min="15" ref={waitTimeRef} required></Form.Control>
                             </Form.Group>
+                            <br></br>
                             <Form.Group>
                                 <Form.Label>Car</Form.Label>
                                 <Form.Check type="switch" onChange={(e) => setWantCar(e.target.checked)}></Form.Check>

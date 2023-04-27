@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/commuter-clock-web/static/css/main.7549aeb7.css",
+    "main.css": "/commuter-clock-web/static/css/main.19a3c103.css",
     "main.js": "/commuter-clock-web/static/js/main.92a7563b.js",
     "static/media/train.mov": "/commuter-clock-web/static/media/train.fff61d87b038f26d4bfd.mov",
     "static/media/NanumPenScript-Regular.ttf": "/commuter-clock-web/static/media/NanumPenScript-Regular.124b3244c7b453983cb5.ttf",
@@ -9,11 +9,11 @@
     "static/media/faith_headshot.jpg": "/commuter-clock-web/static/media/faith_headshot.aacb7d400b01c5efa35e.jpg",
     "static/media/max_headshot.jpg": "/commuter-clock-web/static/media/max_headshot.d08813ce26f073d28155.jpg",
     "index.html": "/commuter-clock-web/index.html",
-    "main.7549aeb7.css.map": "/commuter-clock-web/static/css/main.7549aeb7.css.map",
+    "main.19a3c103.css.map": "/commuter-clock-web/static/css/main.19a3c103.css.map",
     "main.92a7563b.js.map": "/commuter-clock-web/static/js/main.92a7563b.js.map"
   },
   "entrypoints": [
-    "static/css/main.7549aeb7.css",
+    "static/css/main.19a3c103.css",
     "static/js/main.92a7563b.js"
   ]
 }

@@ -44,12 +44,12 @@ export default function Add() {
                         <Form id="form" onSubmit={handleSubmit}> 
                             <Form.Group id="start">
                                 <Form.Label>Starting Point</Form.Label>
-                                <Form.Control type="text" ref={startPtRef} required></Form.Control>
+                                <Form.Control type="text" ref={startPtRef} placeholder="101 Johnson St Brooklyn" required></Form.Control>
                             </Form.Group>
                             <br></br>
                             <Form.Group>
                                 <Form.Label>Destination</Form.Label>
-                                <Form.Control id="end" type="text" ref={destRef}required></Form.Control>
+                                <Form.Control id="end" type="text" ref={destRef} placeholder="Washington Square Manhattan"required></Form.Control>
                             </Form.Group>
                             <br></br>
                             <Form.Group >
@@ -64,7 +64,7 @@ export default function Add() {
                             <br></br>
                             <Form.Group>
                                 <Form.Label>Clock Update Delay (seconds)</Form.Label>
-                                <Form.Control id="wait_time" type="number" min="15" ref={waitTimeRef}required></Form.Control>
+                                <Form.Control id="wait_time" type="number" min="15" placeholder="15" ref={waitTimeRef}required></Form.Control>
                             </Form.Group>
                             <br></br>
                             <Form.Group>

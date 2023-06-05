@@ -18,10 +18,7 @@ export default function About() {
             Meet the team
         </h2>
         <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-        <div class="container">
+        <div class="members-container">
             <div className="left">
                 <div class="profile">
                     <h2>Riley Dou</h2>

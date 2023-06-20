@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { getFirestore, doc, deleteDoc } from 'firebase/firestore/lite';
 import { getAuth } from 'firebase/auth';
 
-export default function Delete() {
+const Delete = () => {
 
     const auth = getAuth();
     const user = auth.currentUser;
@@ -29,3 +29,5 @@ export default function Delete() {
         </>
     )
 }
+
+export default Delete;

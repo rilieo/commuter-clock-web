@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { GoogleButton } from 'react-google-button';
 import { Form, Button, Alert } from 'react-bootstrap'
 import { useNavigate } from 'react-router-dom';
 import { useUserAuth } from '../context/UserAuthContext.js';
-import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth";
 
-export default function Login() {
+const Login = () => {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -59,3 +57,5 @@ export default function Login() {
     </div>
     )
 }
+
+export default Login;

@@ -3,7 +3,7 @@ import Riley from '../assets/img/riley_headshot.jpg';
 import Faith from '../assets/img/faith_headshot.jpg';
 import Max from '../assets/img/max_headshot.jpg';
 
-export default function About() {
+const About = () => {
     return (
         <>
         <h1 style={{marginLeft: "10px"}}>
@@ -63,3 +63,5 @@ export default function About() {
         </>
     )
 }
+
+export default About;

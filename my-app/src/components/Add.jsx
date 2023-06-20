@@ -1,64 +1,44 @@
 import React, { useRef, useState } from 'react';
-import { Card, Form, Button } from 'react-bootstrap';
-import { updateDoc, getFirestore, getDoc, doc } from 'firebase/firestore/lite';
-import { getAuth } from 'firebase/auth';
 import app from '../firebase.js';
+import { Form, Button, Card } from 'react-bootstrap';
+import { setDoc, doc, getFirestore } from 'firebase/firestore/lite';
+import { getAuth } from "firebase/auth";
 
-export default function Update() {
+const Add = () => {
 
     const auth = getAuth();
     const user = auth.currentUser;
-    // const [ startPt, setStartPt ] = useState("");
-    // const [ dest, setDest ] = useState("");
-    // const [ waitTime, setWaitTime ] = useState("");
+    const email = user.email;
     const startPtRef = useRef();
     const destRef = useRef();
-    const waitTimeRef = useRef();
     const startTimeRef = useRef();
     const endTimeRef = useRef();
-    const [ wantCar, setWantCar ] = useState(false);
+    const waitTimeRef = useRef();
+    const [wantCar, setWantCar] = useState(false);
 
-    // getDoc(doc(getFirestore(app), "settings", user.email)).then(docSnap => {
-    //         let arr = Object.values(docSnap.data());
-    //         console.log(arr);
-    //         setStartPt(arr[0]);
-    //         setDest(arr[4]);
-    //         setWaitTime(arr[5]);
-    //         setWantCar(arr[3]);
-    //         console.log(wantCar);
-    // })
-
-    function handleSubmit(e){
+    function handleSubmit(e) {
 
         e.preventDefault();
 
-        // updateDoc(doc(getFirestore(app), "settings", user.email), {
-        //     destination: dest,
-        //     end_hour: endTimeRef.current.value,
-        //     origin: startPt,
-        //     start_hour: startTimeRef.current.value,
-        //     wait_seconds: waitTime,
-        //     should_consider_car: wantCar
-        // });
-
-        updateDoc(doc(getFirestore(app), "settings", user.email), {
+        setDoc(doc(getFirestore(app), "settings", email), {
             destination: destRef.current.value,
             end_hour: endTimeRef.current.value,
             origin: startPtRef.current.value,
             start_hour: startTimeRef.current.value,
             wait_seconds: waitTimeRef.current.value,
             should_consider_car: wantCar
-        });
+        })
+            alert('User added');
+
+        e.target.reset();
         
-        alert('User updated!');
-
     }
-
+    
     return (
-        <>
-        <div className="update-container">
-            <h1 className="text-center mb-4" id="header">Update Settings</h1>
-            <Card className="update-form" border="dark">
+    <>
+        <div className="add-container">
+            <h1>Add Settings</h1>
+            <Card className="add-form" border="dark">
                 <Card.Body>
                         <Form id="form" onSubmit={handleSubmit}> 
                             <Form.Group id="start">
@@ -68,7 +48,7 @@ export default function Update() {
                             <br></br>
                             <Form.Group>
                                 <Form.Label>Destination</Form.Label>
-                                <Form.Control id="end" type="text" ref={destRef} placeholder="Washington Square Manhattan" required></Form.Control>
+                                <Form.Control id="end" type="text" ref={destRef} placeholder="Washington Square Manhattan"required></Form.Control>
                             </Form.Group>
                             <br></br>
                             <Form.Group >
@@ -82,20 +62,23 @@ export default function Update() {
                             </Form.Group>
                             <br></br>
                             <Form.Group>
-                                <Form.Label>Clock Update Delay (seconds) </Form.Label>
-                                <Form.Control id="wait_time" type="number" min="15" placeholder="15" ref={waitTimeRef} required></Form.Control>
+                                <Form.Label>Clock Update Delay (seconds)</Form.Label>
+                                <Form.Control id="wait_time" type="number" min="15" placeholder="15" ref={waitTimeRef}required></Form.Control>
                             </Form.Group>
                             <br></br>
                             <Form.Group>
-                                <Form.Label>Car</Form.Label>
+                                <Form.Label>Car</Form.Label><br></br>
                                 <Form.Check type="switch" onChange={(e) => setWantCar(e.target.checked)}></Form.Check>
                             </Form.Group>
                             <br></br>
-                            <Button className="w-100" type="submit" border="dark" variant="dark">Update</Button>
+                            <Button className="w-100" type="submit" border="dark" variant="dark">Add</Button>
                         </Form>
                 </Card.Body>
             </Card>
         </div>
     </>
+    
     )
 }
+
+export default Add;

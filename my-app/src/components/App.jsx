@@ -1,17 +1,16 @@
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
-import Add from './Add.js';
-import Delete from './Delete.js';
-import Update from './Update.js';
-import Settings from './Settings.js';
-import Signup from './Signup.js';
-import Login from './Login.js';
-import Home from './Home.js';
+import Add from './Add.jsx';
+import Delete from './Delete.jsx';
+import Update from './Update.jsx';
+import Settings from './Settings.jsx';
+import Signup from './Signup.jsx';
+import Login from './Login.jsx';
+import Home from './Home.jsx';
 import { UserAuthContextProvider } from '../context/UserAuthContext.js';
-import '../styles/style.css';
-import PrivateRoute from './PrivateRoute.js';
-import About from './About.js';
-import View from './View.js';
+import '../styles/styles.css';
+import PrivateRoute from './PrivateRoute.jsx';
+import About from './About.jsx';
+import View from './View.jsx';
 
 function App() {
   return (

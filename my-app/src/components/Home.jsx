@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap';
 import { useNavigate, Link } from 'react-router-dom';
 import vid from '../assets/video/train.mov';
 
-export default function Home() {
+const Home = () => {
 
     const navigate = useNavigate();
 
@@ -59,3 +59,5 @@ export default function Home() {
         </>
     )
 }
+
+export default Home;

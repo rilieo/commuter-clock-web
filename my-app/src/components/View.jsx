@@ -4,7 +4,7 @@ import app from '../firebase.js';
 import { getFirestore, getDoc, doc } from 'firebase/firestore/lite';
 import { Card } from 'react-bootstrap';
 
-export default function View() {
+const View = () => {
 
     const auth = getAuth();
     const user = auth.currentUser;
@@ -38,3 +38,5 @@ export default function View() {
         </div>
     )
 }
+
+export default View;

@@ -1,8 +1,7 @@
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import '../styles/style.css';
 
-export default function Settings() {
+const Settings = () => {
 
     const navigate = useNavigate();
 
@@ -45,6 +44,8 @@ export default function Settings() {
 
     )
 }
+
+export default Settings;
 
 
 

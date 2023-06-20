@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { GoogleButton } from 'react-google-button';
 import { useNavigate } from 'react-router-dom';
 import { Form, Button, Alert } from 'react-bootstrap';
-import { useUserAuth } from "../context/UserAuthContext.js";
-import '../styles/style.css';
+import { useUserAuth } from "../context/UserAuthContext";
 
-export default function Signup() {
+const Signup = () => {
 
     // const provider = new GoogleAuthProvider();
     const navigate = useNavigate();
@@ -24,30 +22,6 @@ export default function Signup() {
             setError(err.message);
         }
     }
-
-    // function handleClick(){
-    //     signInWithRedirect(auth, provider);
-    //     getRedirectResult(auth)
-    //     .then((result) => {
-    //     // This gives you a Google Access Token. You can use it to access Google APIs.
-    //         const credential = GoogleAuthProvider.credentialFromResult(result);
-    //         const token = credential.accessToken;
-    
-    //         // The signed-in user info.
-    //         const user = result.user;
-    //     // IdP data available using getAdditionalUserInfo(result)
-    //     // ...
-    //     }).catch((error) => {
-    //     // Handle Errors here.
-    //         const errorCode = error.code;
-    //         const errorMessage = error.message;
-    //         // The email of the user's account used.
-    //         const email = error.customData.email;
-    //         // The AuthCredential type that was used.
-    //         const credential = GoogleAuthProvider.credentialFromError(error);
-    //     // ...
-    //     });
-    // }
 
     return (
         <>
@@ -76,5 +50,6 @@ export default function Signup() {
         </div>
         </>
     )
-
 }
+
+export default Signup;

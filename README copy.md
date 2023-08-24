@@ -1,3 +1,21 @@
+# Overview
+
+This website allows users to personalize their clock by adding, deleting, and editing a setting that fits with their daily schedule.
+
+# Prerequisites
+
+## Firebase
+
+To utilize Firebase functions in React, you can run:
+
+```
+npm i firebase@10.3.0
+
+# OR
+
+yarn add firebase@10.3.0
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

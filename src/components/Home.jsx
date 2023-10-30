@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate, Link } from 'react-router-dom';
-import vid from '../assets/video/train.mov';
 
 const Home = () => {
 
@@ -34,8 +33,7 @@ const Home = () => {
                 </div>
                 <div className="video">
                     <iframe title="product_ad" width="600" height="400" 
-                    src="https://www.youtube.com/embed/1_z6RN1Q_qg?autoplay=1" allow="autoplay">
-                    </iframe>
+                    src="https://www.youtube.com/embed/1_z6RN1Q_qg?si=bfZ5kGbjLsBnudlc"></iframe>
                 </div>
                 <div className="mission-container">
                     <h4 style={{ fontWeight: "bold", marginTop: "4rem"}}>Our Mission</h4>
